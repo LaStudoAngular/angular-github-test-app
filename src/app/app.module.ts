@@ -2,13 +2,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
+// MODULES
 import { AppRoutingModule } from './app-routing.module';
+
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { from } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,7 @@ import { from } from 'rxjs';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    ContactComponent
+    ContactComponent,
   ],
   imports: [
     BrowserModule,

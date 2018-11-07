@@ -5,8 +5,19 @@ import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'contact', component: ContactComponent }
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full'
+  },
+  {
+    path: 'contact',
+    component: ContactComponent
+  },
+  {
+    path: 'users',
+    loadChildren: 'src/app/users/users.module#UsersModule'
+  }
 ];
 
 @NgModule({
