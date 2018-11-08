@@ -9,22 +9,22 @@
 <!-- form -->
 <section class="section">
   <div class="container">
-    <form (ngSubmit)="submitForm()" #contactForm="ngForm">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="field">
         <label class="label is-capitalized" for="name">name</label>
-        <input class="input" type="text" id="name" name="name" [(ngModel)]="name" #inputName="ngModel" required>
-        <div class="help is-error" *ngIf="inputName.invalid && inputName.touched">your name is required</div>
+        <input class="input" type="text" id="name" name="name" formControlName="name">
+        <div class="help is-error" *ngIf="form.get('name').invalid && form.get('name').touched">your name is required</div>
       </div>
       <div class="field">
         <label class="label is-capitalized" for="email">email</label>
-        <input class="input" type="text" id="email" name="email" [(ngModel)]="email" #inputEmail="ngModel"  required>
-        <div class="help is-error" *ngIf="inputEmail.invalid && inputEmail.touched">your email is required</div>
+        <input class="input" type="text" id="email" name="email" formControlName="email">
+        <div class="help is-error" *ngIf="form.get('email').invalid && form.get('email').touched">your email is required</div>
       </div>
       <div class="field">
         <label class="label is-capitalized" for="message">message</label>
-        <textarea class="textarea" name="message" id="message" cols="30" rows="10" [(ngModel)]="message" required></textarea>
+        <textarea class="textarea" name="message" id="message" cols="30" rows="10" formControlName="message"></textarea>
       </div>
-      <button class="button is-large is-warning is-capitalized" type="submit" [disabled]="contactForm.invalid">send</button>
+      <button class="button is-large is-warning is-capitalized" type="submit" [disabled]="form.invalid">send</button>
     </form>
   </div>
 </section>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'sc-contact',
@@ -9,13 +10,18 @@ export class ContactComponent implements OnInit {
   name: string;
   email: string;
   message: string;
+  form: FormGroup;
 
-  constructor() {}
+  ngOnInit() {
+    this.form = new FormGroup({
+      name: new FormControl('', Validators.required),
+      email: new FormControl('', [Validators.required, Validators.email]),
+      message: new FormControl('', Validators.required)
+    });
+  }
 
-  ngOnInit() {}
-
-  submitForm() {
-    console.log(`${this.name} submit form`)
+  onSubmit() {
+    console.log(`${this.form} submit form`)
   }
 
 }
