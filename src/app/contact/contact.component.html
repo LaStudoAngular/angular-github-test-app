@@ -6,19 +6,20 @@
   </div>
 </section>
 
-<!-- form -->
 <section class="section">
   <div class="container">
     <form [formGroup]="form" (ngSubmit)="onSubmit()">
       <div class="field">
         <label class="label is-capitalized" for="name">name</label>
         <input class="input" type="text" id="name" name="name" formControlName="name">
-        <div class="help is-error" *ngIf="form.get('name').invalid && form.get('name').touched">your name is required</div>
+        <div class="help is-error" *ngIf="form.get('name').invalid && form.get('name').touched">your name is required
+        </div>
       </div>
       <div class="field">
         <label class="label is-capitalized" for="email">email</label>
         <input class="input" type="text" id="email" name="email" formControlName="email">
-        <div class="help is-error" *ngIf="form.get('email').invalid && form.get('email').touched">your email is required</div>
+        <div class="help is-error" *ngIf="form.get('email').invalid && form.get('email').touched">your email is required
+        </div>
       </div>
       <div class="field">
         <label class="label is-capitalized" for="message">message</label>
